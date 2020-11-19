@@ -8,6 +8,8 @@ import { type PropsWithStyles } from '../types';
 import { className } from '../utils';
 import { getSource } from './component-helpers';
 import componentBaseClassNames from './componentBaseClassNames';
+import useNativeLazyLoading from '@charlietango/use-native-lazy-loading';
+import { useInView } from 'react-intersection-observer';
 
 type Props = PropsWithStyles & {
   data: Object,
@@ -30,14 +32,23 @@ const View = (props: Props) => {
     src: getSource({ data, isFullscreen }),
   };
 
+  const supportsLazyLoading = useNativeLazyLoading();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    skip: supportsLazyLoading !== false,
+  });
+
   return (
     <Div
+      ref={ref}
       css={getStyles(viewBaseClassName, props)}
       className={className(viewBaseClassName, { isFullscreen, isModal })}
     >
+      {inView || supportsLazyLoading ? (
       <Img
         {...innerProps}
         className={className('view-image', { isFullscreen, isModal })}
+        loading="lazy"
         css={{
           height: 'auto',
           maxHeight: '100%',
@@ -45,6 +56,7 @@ const View = (props: Props) => {
           userSelect: 'none',
         }}
       />
+      ) : null}
     </Div>
   );
 };
