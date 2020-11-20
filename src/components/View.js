@@ -39,7 +39,6 @@ const View = (props: Props) => {
 
   return (
     <Div
-      ref={ref}
       css={getStyles(viewBaseClassName, props)}
       className={className(viewBaseClassName, { isFullscreen, isModal })}
     >
