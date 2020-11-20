@@ -8,8 +8,6 @@ import { type PropsWithStyles } from '../types';
 import { className } from '../utils';
 import { getSource } from './component-helpers';
 import componentBaseClassNames from './componentBaseClassNames';
-import useNativeLazyLoading from '@charlietango/use-native-lazy-loading';
-import { useInView } from 'react-intersection-observer';
 
 type Props = PropsWithStyles & {
   data: Object,
@@ -26,17 +24,18 @@ export const viewCSS = () => ({
 const viewBaseClassName = componentBaseClassNames.View;
 
 const View = (props: Props) => {
+  const [isInScreen, setIsInScreen] = React.useState(index === 0) ;
   const { data, formatters, getStyles, index, isFullscreen, isModal } = props;
   const innerProps = {
     alt: formatters.getAltText({ data, index }),
     src: getSource({ data, isFullscreen }),
   };
 
-  const supportsLazyLoading = useNativeLazyLoading();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    skip: supportsLazyLoading !== false,
-  });
+  React.useEffect(() => {
+    if(index >= currentIndex && !isInScreen) {
+      setIsInScreen(true);
+    }
+  },[index,currentIndex]);
 
   return (
     <Div
@@ -44,7 +43,7 @@ const View = (props: Props) => {
       css={getStyles(viewBaseClassName, props)}
       className={className(viewBaseClassName, { isFullscreen, isModal })}
     >
-      {inView || supportsLazyLoading ? (
+      {isInScreen ? (
       <Img
         {...innerProps}
         className={className('view-image', { isFullscreen, isModal })}

@@ -116,11 +116,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@charlietango/use-native-lazy-loading@^1.9.0":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@charlietango/use-native-lazy-loading/-/use-native-lazy-loading-1.9.0.tgz#825b9ccb284b9632d70ec7f03b77fbe65f8ce3fc"
-  integrity sha512-lIOJYxF+RXT9T1cDvfhmjfUyiePT6BaQY4fjknm36TKGH7OJpdY1yJrspqdK1sfL0botxSH8aADszqmi2TGGFQ==
-
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
@@ -6431,11 +6426,6 @@ react-helmet@^6.0.0:
     prop-types "^15.7.2"
     react-fast-compare "^2.0.4"
     react-side-effect "^2.1.0"
-
-react-intersection-observer@^8.30.3:
-  version "8.30.3"
-  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.30.3.tgz#99850f0aacc5b474dddb04976e58d7ee9315ba19"
-  integrity sha512-hKYTJUrU99hAf7h1lNY3pjYXt+09BaPNC6fcLw1B8OLJJUDXTWrwzu4hRuztougeRgPYpxmNaTn1FS4F3EQnhA==
 
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"

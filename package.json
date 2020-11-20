@@ -1,19 +1,19 @@
 {
   "name": "react-images-lazy-load",
-  "version": "1.1.7",
-  "description": "A mobile-friendly, highly customizable, carousel component for displaying media in ReactJS",
+  "version": "1.1.8",
+  "description": "A mobile-friendly, highly customizable, carousel component for displaying media in ReactJS **Experimental**",
   "main": "lib/index.js",
   "jsnext:main": "dist/react-images.es.js",
   "module": "dist/react-images.es.js",
   "types": "./index.d.ts",
   "author": "Joss Mackison",
   "repository": {
-    "url": "https://github.com/jossmac/react-images"
+    "url": "https://github.com/luisrivas/react-images-lazy-load"
   },
   "bugs": {
-    "url": "https://github.com/jossmac/react-images/issues"
+    "url": "https://github.com/luisrivas/react-images-lazy-load/issues"
   },
-  "homepage": "https://jossmac.github.io/react-images/",
+  "homepage": "https://luisrivas.github.io/react-images-lazy-load/",
   "license": "MIT",
   "keywords": [
     "react",
@@ -65,7 +65,6 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "@charlietango/use-native-lazy-loading": "^1.9.0",
     "a11y-focus-store": "^1.0.0",
     "cross-env": "^7.0.2",
     "glam": "^5.0.1",
@@ -73,7 +72,6 @@
     "raf-schd": "^2.1.2",
     "react-focus-on": "^3.3.0",
     "react-full-screen": "^0.2.4",
-    "react-intersection-observer": "^8.30.3",
     "react-transition-group": "^2.9.0",
     "react-view-pager": "^0.6.0"
   },

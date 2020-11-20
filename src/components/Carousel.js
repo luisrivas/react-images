@@ -402,7 +402,7 @@ class Carousel extends Component<CarouselProps, CarouselState> {
                 views.map((data, index) => {
                   return (
                     <PageView className={className('view-wrapper')} key={index}>
-                      <View {...commonProps} data={data} index={index} />
+                      <View {...commonProps} data={data} index={index} currentIndex={currentIndex} />
                     </PageView>
                   );
                 })}
