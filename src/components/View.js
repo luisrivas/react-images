@@ -25,13 +25,14 @@ const viewBaseClassName = componentBaseClassNames.View;
 
 const View = (props: Props) => {
   const { data, formatters, getStyles, index, currentIndex, isFullscreen, isModal } = props;
-  const [isInScreen, setIsInScreen] = React.useState(index === 0) ;
+  const [isInScreen, setIsInScreen] = React.useState(false) ;
   const innerProps = {
     alt: formatters.getAltText({ data, index }),
     src: getSource({ data, isFullscreen }),
   };
 
   React.useEffect(() => {
+    console.log('--------> index ', index, 'currentIndex ', currentIndex, 'isInScreen', isInScreen);
     if(index >= currentIndex && !isInScreen) {
       setIsInScreen(true);
     }
