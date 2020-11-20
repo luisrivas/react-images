@@ -24,8 +24,8 @@ export const viewCSS = () => ({
 const viewBaseClassName = componentBaseClassNames.View;
 
 const View = (props: Props) => {
+  const { data, formatters, getStyles, index, currentIndex, isFullscreen, isModal } = props;
   const [isInScreen, setIsInScreen] = React.useState(index === 0) ;
-  const { data, formatters, getStyles, index, isFullscreen, isModal } = props;
   const innerProps = {
     alt: formatters.getAltText({ data, index }),
     src: getSource({ data, isFullscreen }),
